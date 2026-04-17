@@ -2,18 +2,20 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sarantheep Sachena — UI/UX Designer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
   <!-- ===== LOADING SCREEN ===== -->
-  <div id="loader">
+  <div id="loader" class="loader">
     <div class="loader-inner">
       <div class="loader-logo">SS</div>
       <div class="loader-bar"><div class="loader-fill"></div></div>
@@ -22,273 +24,314 @@
   </div>
 
   <!-- ===== CURSOR ===== -->
-  <div id="cursor"></div>
-  <div id="cursor-follower"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
   <!-- ===== SCROLL PROGRESS ===== -->
-  <div id="scroll-progress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">S<span>.</span>S</a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <div class="availability-badge">
-          <span class="pulse-dot"></span>
-          Open to Work
-        </div>
-        <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <!-- ===== STICKY NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-mark">S</span>
+      <span class="logo-name">Sarantheep sachena</span>
     </div>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa fa-sun" id="themeIcon"></i>
+      </button>
+      <a href="mailto:sarantheep143@gmail.com" class="nav-cta">Hire Me</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- ===== HERO SECTION ===== -->
-  <section id="hero">
-    <canvas id="particles-canvas"></canvas>
-    <div class="hero-glow glow-1"></div>
-    <div class="hero-glow glow-2"></div>
-    <div class="hero-glow glow-3"></div>
+  <section class="hero" id="hero">
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <!-- Particle canvas -->
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
 
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-badge reveal-up">
-          <i class="fas fa-star"></i> UI/UX Designer
-        </div>
-        <h1 class="hero-name reveal-up delay-1">
-          Sarantheep<br><span class="gold-text">Sachena</span>
-        </h1>
-        <p class="hero-tagline reveal-up delay-2">
-          Designing meaningful digital experiences<br>with creativity, clarity, and purpose.
-        </p>
-        <p class="hero-intro reveal-up delay-3">
-          Enthusiastic UI/UX Designer passionate about creating intuitive, visually appealing, and user-centered digital experiences.
-        </p>
-        <div class="hero-actions reveal-up delay-4">
-          <a href="#projects" class="btn btn-primary magnetic">
-            <span>View Projects</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="./assests/resume.pdf.pdf" class="btn btn-outline magnetic" download>
-            <span>Download Resume</span>
-            <i class="fas fa-download"></i>
-          </a>
-          <a href="#contact" class="btn btn-ghost magnetic">
-            <span>Contact Me</span>
-          </a>
-        </div>
-        <div class="hero-stats reveal-up delay-5">
-          <div class="stat">
-            <span class="stat-num">1+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-num">2+</span>
-            <span class="stat-label">Projects Done</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-num">9.6</span>
-            <span class="stat-label">CGPA</span>
-          </div>
-        </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        <span>Open to Work</span>
       </div>
-      <div class="hero-visual reveal-right delay-2">
-        <div class="hero-image-frame">
-          <div class="hero-image-bg"></div>
-          <div class="hero-avatar">
-           <img src="./assests/profile.png" alt="Sarantheep Profile Photo">            
-          </div>
-          <div class="floating-card card-figma">
-            <i class="fab fa-figma"></i> Figma Expert
-          </div>
-          <div class="floating-card card-ux">
-            <i class="fas fa-pencil-ruler"></i> UX Research
-          </div>
-          <div class="floating-card card-design">
-            <i class="fas fa-layer-group"></i> InDesign Paginator
-          </div>
+      <h1 class="hero-title reveal-up">
+        <span class="title-line title-line-1">Designing</span>
+        <span class="title-line title-line-2"><em>Meaningful</em></span>
+        <span class="title-line title-line-3">Experiences</span>
+      </h1>
+      <p class="hero-tagline reveal-up">UI/UX Designer crafting intuitive, visually rich interfaces that solve real human problems — with clarity, purpose, and elegance.</p>
+      <div class="hero-cta reveal-up">
+        <a href="#projects" class="btn btn-primary magnetic">
+          <span>View Projects</span>
+          <i class="fa fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic">
+          <span>Contact Me</span>
+        </a>
+        <a href="./assests/Sarantheep Sachena.pdf" class="btn btn-outline magnetic" download>
+          <i class="fa fa-download"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat">
+          <span class="stat-num">1+</span>
+          <span class="stat-label">Years Design</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Tools Mastered</span>
         </div>
       </div>
     </div>
-
-    <div class="scroll-indicator">
+    <div class="hero-visual reveal-right">
+      <div class="avatar-ring">
+        <div class="avatar-frame">
+          <div class="avatar-placeholder">
+            <span class="avatar-initials">SS</span>
+            <div class="avatar-glow"></div>
+          </div>
+        </div>
+        <div class="orbit orbit-1"><span class="orbit-dot"></span></div>
+        <div class="orbit orbit-2"><span class="orbit-dot"></span></div>
+        <div class="floating-card card-figma">
+          <i class="fab fa-figma"></i>
+          <span>Figma</span>
+        </div>
+        <div class="floating-card card-xd">
+          <i class="fas fa-pen-nib"></i>
+          <span>Adobe XD</span>
+        </div>
+        <div class="floating-card card-ux">
+          <i class="fas fa-users"></i>
+          <span>UI/UX Designer</span>
+        </div>
+        <div class="floating-card card-ux">
+          <i class="fas fa-users"></i>
+          <span>InDesign Paginator</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
       <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
-  <section id="about">
+  <section class="about section" id="about">
     <div class="container">
       <div class="section-label reveal-up">About Me</div>
       <div class="about-grid">
-        <div class="about-left reveal-left">
-          <div class="about-image-wrap">
+        <div class="about-image-wrap reveal-left">
+          <div class="about-img-frame">
             <div class="about-img-placeholder">
-              <i class="fas fa-user-circle"></i>
+              <div class="about-img-text">
+                <span class="about-img-initials">S</span>
+                <span class="about-img-name">Sarantheep Sachena</span>
+              </div>
+              <div class="about-img-overlay"></div>
             </div>
-            <div class="about-img-deco"></div>
+          </div>
+          <div class="about-card-accent">
+            <div class="about-accent-line"></div>
           </div>
         </div>
-        <div class="about-right reveal-right">
-          <h2 class="section-title">Crafting Interfaces<br><em>People Love</em></h2>
-          <p class="about-text">
-            I am a passionate UI/UX Designer with a background in Mechanical Engineering and a strong interest in crafting intuitive and engaging digital experiences. I enjoy transforming ideas into clean, functional, and visually appealing interfaces.
-          </p>
-          <p class="about-text">
-            I have experience in UI/UX design, graphic design, Adobe InDesign pagination, and basic front-end Knowledge. My goal is to design products that not only look beautiful but also provide meaningful user experiences.
-          </p>
+        <div class="about-content reveal-right">
+          <h2 class="section-title">A Designer Who<br/><em>Thinks Differently</em></h2>
+          <p class="about-text">I'm a passionate UI/UX Designer with a background in Mechanical Engineering and a strong interest in crafting intuitive and engaging digital experiences. I enjoy transforming ideas into clean, functional, and visually appealing interfaces.</p>
+          <p class="about-text">I have experience in UI/UX design, graphic design, Adobe InDesign pagination, and basic front-end development. My goal is to design products that not only look beautiful but also provide meaningful user experiences.</p>
           <div class="about-highlights">
             <div class="highlight-item">
-              <i class="fas fa-drafting-compass"></i>
-              <span>Design Thinking</span>
+              <i class="fas fa-palette"></i>
+              <div>
+                <strong>Design-First</strong>
+                <span>Every pixel has purpose</span>
+              </div>
             </div>
             <div class="highlight-item">
               <i class="fas fa-users"></i>
-              <span>User Research</span>
+              <div>
+                <strong>User-Centered</strong>
+                <span>People over aesthetics</span>
+              </div>
             </div>
             <div class="highlight-item">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Mobile First</span>
-            </div>
-            <div class="highlight-item">
-              <i class="fas fa-palette"></i>
-              <span>Visual Systems</span>
+              <i class="fas fa-cog"></i>
+              <div>
+                <strong>Engineering Mind</strong>
+                <span>Logical, systematic approach</span>
+              </div>
             </div>
           </div>
-          <a href="#contact" class="btn btn-primary magnetic" style="margin-top:2rem;display:inline-flex;">
-            <span>Let's Collaborate</span>
-            <i class="fas fa-handshake"></i>
-          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SKILLS SECTION ===== -->
-  <section id="skills">
+  <section class="skills section" id="skills">
     <div class="container">
-      <div class="section-label reveal-up">My Toolkit</div>
-      <h2 class="section-title centered reveal-up">Skills &amp; Expertise</h2>
-      <p class="section-sub reveal-up">Tools and technologies I use to bring ideas to life</p>
-
+      <div class="section-label reveal-up">Skills</div>
+      <h2 class="section-title centered reveal-up">My <em>Toolkit</em></h2>
+      <p class="section-subtitle reveal-up">Tools, technologies, and disciplines I wield to create exceptional design</p>
       <div class="skills-categories reveal-up">
-        <div class="skill-category">
-          <div class="skill-category-header">
-            <i class="fas fa-pencil-ruler"></i>
-            <h3>Design Tools</h3>
-          </div>
-          <div class="skill-pills">
-            <div class="skill-pill" data-level="95"><i class="fab fa-figma"></i><span>Figma</span></div>
-            <div class="skill-pill" data-level="85"><i class="fas fa-vector-square"></i><span>Adobe XD</span></div>
-            <div class="skill-pill" data-level="80"><i class="fas fa-pen-nib"></i><span>Sketch</span></div>
-            <div class="skill-pill" data-level="88"><i class="fab fa-adobe"></i><span>Illustrator</span></div>
-            <div class="skill-pill" data-level="92"><i class="fab fa-adobe"></i><span>InDesign</span></div>
-          </div>
+        <button class="skill-cat-btn active" data-cat="all">All</button>
+        <button class="skill-cat-btn" data-cat="design">Design</button>
+        <button class="skill-cat-btn" data-cat="ux">UI/UX</button>
+        <button class="skill-cat-btn" data-cat="tech">Tech</button>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fab fa-figma"></i></div>
+          <h3>Figma</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
         </div>
-        <div class="skill-category">
-          <div class="skill-category-header">
-            <i class="fas fa-code"></i>
-            <h3>Development</h3>
-          </div>
-          <div class="skill-pills">
-            <div class="skill-pill" data-level="75"><i class="fab fa-html5"></i><span>HTML</span></div>
-            <div class="skill-pill" data-level="60"><i class="fas fa-ruler"></i><span>AutoCAD</span></div>
-          </div>
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+          <h3>Adobe XD</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
         </div>
-        <div class="skill-category">
-          <div class="skill-category-header">
-            <i class="fas fa-brain"></i>
-            <h3>UX Skills</h3>
-          </div>
-          <div class="skill-pills">
-            <div class="skill-pill" data-level="90"><i class="fas fa-sitemap"></i><span>Wireframing</span></div>
-            <div class="skill-pill" data-level="88"><i class="fas fa-play-circle"></i><span>Prototyping</span></div>
-            <div class="skill-pill" data-level="85"><i class="fas fa-search"></i><span>User Research</span></div>
-            <div class="skill-pill" data-level="82"><i class="fas fa-flask"></i><span>Usability Testing</span></div>
-            <div class="skill-pill" data-level="90"><i class="fas fa-eye"></i><span>Visual Design</span></div>
-            <div class="skill-pill" data-level="87"><i class="fas fa-mouse-pointer"></i><span>Interaction Design</span></div>
-          </div>
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fas fa-vector-square"></i></div>
+          <h3>Sketch</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fas fa-palette"></i></div>
+          <h3>Adobe Illustrator</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Adobe InDesign</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>Wireframing</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Prototyping</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-users"></i></div>
+          <h3>User Research</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3>Usability Testing</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-eye"></i></div>
+          <h3>Visual Design</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="ux">
+          <div class="skill-icon"><i class="fas fa-mouse-pointer"></i></div>
+          <h3>Interaction Design</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="tech">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <h3>HTML/CSS</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="72"></div></div>
+        </div>
+        <div class="skill-card reveal-up" data-cat="design">
+          <div class="skill-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h3>AutoCAD</h3>
+          <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== EXPERIENCE SECTION ===== -->
-  <section id="experience">
+  <section class="experience section" id="experience">
     <div class="container">
-      <div class="section-label reveal-up">Career Path</div>
-      <h2 class="section-title centered reveal-up">Work Experience</h2>
-
+      <div class="section-label reveal-up">Experience</div>
+      <h2 class="section-title centered reveal-up">Career <em>Journey</em></h2>
       <div class="timeline">
-        <div class="timeline-line"></div>
+        <div class="timeline-track"></div>
 
-        <div class="timeline-item reveal-up">
+        <!-- Experience 1 -->
+        <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
+          <div class="timeline-card">
             <div class="timeline-header">
               <div>
                 <h3 class="timeline-role">InDesign Paginator</h3>
                 <p class="timeline-company">Lumina Datamatics</p>
               </div>
               <div class="timeline-meta">
-                <span class="timeline-date"><i class="fas fa-calendar"></i> Feb 2025 – Present</span>
-                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Madurai</span>
+                <span class="timeline-date"><i class="fa fa-calendar"></i> Feb 2025 – Present</span>
+                <span class="timeline-location"><i class="fa fa-location-dot"></i> Madurai</span>
               </div>
             </div>
-            <ul class="timeline-list">
+            <ul class="timeline-points">
               <li>Designed and paginated print and digital publications using Adobe InDesign</li>
               <li>Managed page layouts for books and publishing projects</li>
               <li>Collaborated with editors, QC teams, and project managers</li>
               <li>Performed quality checks before final delivery</li>
             </ul>
             <div class="timeline-tags">
-              <span>Adobe InDesign</span><span>Publishing</span><span>Layout Design</span>
+              <span>Adobe InDesign</span>
+              <span>Publishing</span>
+              <span>Layout Design</span>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item reveal-up delay-2">
+        <!-- Experience 2 -->
+        <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
+          <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="timeline-role">Freelance Graphic & UI/UX Designer</h3>
+                <h3 class="timeline-role">Freelance UI/UX Designer</h3>
                 <p class="timeline-company">Threeframe Studio</p>
               </div>
               <div class="timeline-meta">
-                <span class="timeline-date"><i class="fas fa-calendar"></i> Oct 2025 – Present</span>
-                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Madurai</span>
+                <span class="timeline-date"><i class="fa fa-calendar"></i> Oct 2025 – Part time</span>
+                <span class="timeline-location"><i class="fa fa-location-dot"></i> Madurai</span>
               </div>
             </div>
-            <ul class="timeline-list">
+            <ul class="timeline-points">
               <li>Designed brand identities and digital interfaces</li>
               <li>Created marketing visuals with clean aesthetics</li>
               <li>Delivered user-centered design solutions for web and mobile platforms</li>
             </ul>
             <div class="timeline-tags">
-              <span>Figma</span><span>Brand Design</span><span>UI/UX</span><span>Marketing</span>
+              <span>UI/UX Design</span>
+              <span>Branding</span>
+              <span>Figma</span>
+              <span>Freelance</span>
             </div>
           </div>
         </div>
@@ -297,196 +340,211 @@
   </section>
 
   <!-- ===== PROJECTS SECTION ===== -->
-  <section id="projects">
+  <section class="projects section" id="projects">
     <div class="container">
-      <div class="section-label reveal-up">Featured Work</div>
-      <h2 class="section-title centered reveal-up">Selected Projects</h2>
-      <p class="section-sub reveal-up">Case studies and design explorations</p>
-
-      <div class="project-filters reveal-up">
+      <div class="section-label reveal-up">Projects</div>
+      <h2 class="section-title centered reveal-up">Selected <em>Work</em></h2>
+      <p class="section-subtitle reveal-up">Case studies and projects that showcase my design thinking</p>
+      <div class="projects-filter reveal-up">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="ux">UI/UX</button>
         <button class="filter-btn" data-filter="engineering">Engineering</button>
       </div>
+      <div class="projects-bento">
 
-      <div class="bento-grid">
-        <!-- Project 1 - Large -->
-        <div class="bento-card bento-large reveal-up" data-cat="ux">
-          <div class="bento-img-placeholder bento-img-turf">
-            <div class="bento-mockup">
-              <div class="phone-mockup">
-                <div class="phone-screen">
-                  <div class="mock-header">
-                    <div class="mock-avatar"></div>
-                    <div>
-                      <div class="mock-line"></div>
-                      <div class="mock-line short"></div>
+        <!-- Project 1 – Turf Booking App (Large Card) -->
+        <div class="project-card project-large reveal-up" data-filter="ux">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder project-img-turf">
+              <div class="project-mockup">
+                <div class="phone-frame">
+                  <div class="phone-screen">
+                    <div class="app-header">
+                      <div class="app-logo-dot"></div>
+                      <span>TurfBook</span>
+                    </div>
+                    <div class="app-search"></div>
+                    <div class="app-card-row">
+                      <div class="app-turf-card"></div>
+                      <div class="app-turf-card"></div>
+                    </div>
+                    <div class="app-slots">
+                      <div class="slot slot-available"></div>
+                      <div class="slot slot-available"></div>
+                      <div class="slot slot-booked"></div>
+                      <div class="slot slot-available"></div>
                     </div>
                   </div>
-                  <div class="mock-search"></div>
-                  <div class="mock-cards">
-                    <div class="mock-card gold"></div>
-                    <div class="mock-card"></div>
-                  </div>
-                  <div class="mock-btn"></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="bento-content">
-            <div class="bento-tags">
-              <span>Figma</span><span>Adobe XD</span><span>Mobile</span>
+            <div class="project-overlay">
+              <a href="#casestudy" class="project-view-btn">View Case Study <i class="fa fa-arrow-right"></i></a>
             </div>
-            <h3 class="bento-title">Turf Booking App</h3>
-            <p class="bento-desc">A mobile app interface for searching, booking, and managing turf reservations with intuitive navigation and clean user flows.</p>
-            <a href="#case-study" class="btn btn-sm magnetic">
-              <span>View Case Study</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
           </div>
-          <div class="bento-overlay"></div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag-type">UI/UX Case Study</span>
+              <span class="tag-tool">Figma</span>
+              <span class="tag-tool">Adobe XD</span>
+            </div>
+            <h3 class="project-title">Turf Booking App</h3>
+            <p class="project-desc">Mobile app interface for searching, booking, and managing turf reservations with intuitive navigation and clean user flows.</p>
+            <div class="project-links">
+              <a href="#casestudy" class="btn btn-small btn-primary magnetic">View Case Study <i class="fa fa-arrow-right"></i></a>
+              <a href="#" class="btn btn-small btn-ghost magnetic"><i class="fab fa-figma"></i> Prototype</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="bento-card reveal-up delay-1" data-cat="engineering">
-          <div class="bento-img-placeholder bento-img-solar">
-            <div class="solar-visual">
-              <div class="solar-panel-wrap">
-                <div class="solar-panel"></div>
-                <div class="solar-base"></div>
-                <div class="solar-rays">
-                  <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+        <!-- Project 2 – Solar Panel -->
+        <div class="project-card project-small reveal-up" data-filter="engineering">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder project-img-solar">
+              <div class="solar-visual">
+                <div class="solar-panel-visual">
+                  <div class="panel-row"><div class="panel-cell"></div><div class="panel-cell"></div><div class="panel-cell"></div></div>
+                  <div class="panel-row"><div class="panel-cell"></div><div class="panel-cell"></div><div class="panel-cell"></div></div>
+                  <div class="panel-arm"></div>
+                </div>
+                <div class="solar-sun">
+                  <div class="sun-core"></div>
+                  <div class="sun-rays"></div>
                 </div>
               </div>
             </div>
+            <div class="project-overlay">
+              <a href="#" class="project-view-btn">View Project <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="bento-content">
-            <div class="bento-tags"><span>Engineering</span><span>AutoCAD</span></div>
-            <h3 class="bento-title">Solar Panel Tilting Mechanism</h3>
-            <p class="bento-desc">Adjustable solar panel system to maximize energy efficiency through optimal angle positioning.</p>
-            <a href="#" class="btn btn-sm magnetic"><span>Learn More</span><i class="fas fa-arrow-right"></i></a>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag-type">Engineering Project</span>
+            </div>
+            <h3 class="project-title">Solar Panel Tilting Mechanism</h3>
+            <p class="project-desc">Adjustable solar panel system to maximize energy efficiency through optimal angle positioning.</p>
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-primary magnetic">View Project <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="bento-overlay"></div>
         </div>
 
-        <!-- Placeholder Project 3 -->
-        <div class="bento-card bento-wide reveal-up delay-2" data-cat="ux">
-          <div class="bento-img-placeholder bento-coming">
-            <div class="coming-text">Coming Soon</div>
-          </div>
-          <div class="bento-content">
-            <div class="bento-tags"><span>UI/UX</span><span>Case Study</span></div>
-            <h3 class="bento-title">Next Project</h3>
-            <p class="bento-desc">New case study in progress. Stay tuned for a detailed design breakdown.</p>
-          </div>
-          <div class="bento-overlay"></div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CASE STUDY SECTION ===== -->
-  <section id="case-study">
+  <section class="casestudy section" id="casestudy">
     <div class="container">
-      <div class="section-label reveal-up">Deep Dive</div>
+      <!-- Case Study Hero -->
       <div class="cs-hero reveal-up">
-        <div class="cs-hero-content">
-          <div class="cs-tags">
-            <span>Figma</span><span>Adobe XD</span><span>Mobile App</span><span>User Research</span><span>Wireframing</span>
-          </div>
-          <h2 class="cs-title">Turf Booking App</h2>
-          <p class="cs-subtitle">UI/UX Case Study for Players and Venue Managers</p>
+        <div class="cs-hero-tags">
+          <span>Figma</span><span>Adobe XD</span><span>Mobile App</span><span>User Research</span><span>Wireframing</span>
         </div>
-        <div class="cs-hero-visual">
-          <div class="cs-phone-trio">
-            <div class="cs-phone cs-phone-left glass-card"></div>
-            <div class="cs-phone cs-phone-center glass-card">
-              <div class="cs-phone-screen">
-                <div class="cs-screen-header gold-grad"></div>
-                <div class="cs-screen-content">
-                  <div class="cs-screen-card"></div>
-                  <div class="cs-screen-card short"></div>
-                </div>
-              </div>
-            </div>
-            <div class="cs-phone cs-phone-right glass-card"></div>
-          </div>
-        </div>
+        <h2 class="cs-title">Turf Booking App</h2>
+        <p class="cs-subtitle">UI/UX Case Study for Players and Venue Managers</p>
       </div>
 
       <!-- Problem + Solution -->
       <div class="cs-two-col reveal-up">
-        <div class="cs-block glass-card">
-          <div class="cs-block-icon"><i class="fas fa-exclamation-circle"></i></div>
-          <h3>Problem Statement</h3>
+        <div class="cs-block cs-problem">
+          <div class="cs-block-icon"><i class="fas fa-exclamation-triangle"></i></div>
+          <h3>Problem</h3>
           <p>Players struggle to book sports turfs because of poor real-time availability, unclear pricing, double bookings, and difficult payment methods. Turf owners also struggle with schedule management and customer reach.</p>
         </div>
-        <div class="cs-block glass-card gold-border">
-          <div class="cs-block-icon gold"><i class="fas fa-lightbulb"></i></div>
-          <h3>The Solution</h3>
-          <p>The app helps users search nearby turfs, check live availability, compare pricing, make secure bookings, and manage schedules easily — all in one intuitive interface.</p>
+        <div class="cs-block cs-solution">
+          <div class="cs-block-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Solution</h3>
+          <p>The app helps users search nearby turfs, check live availability, compare pricing, make secure bookings, and manage schedules easily from one unified platform.</p>
         </div>
       </div>
 
       <!-- Design Process -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">Design Process</h3>
+      <div class="cs-process reveal-up">
+        <h3 class="cs-section-heading">Design Process</h3>
         <div class="process-steps">
           <div class="process-step">
-            <div class="process-icon"><i class="fas fa-heart"></i></div>
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="fas fa-heart"></i></div>
             <h4>Empathize</h4>
-            <p>User interviews & surveys with 10 participants</p>
+            <p>User interviews and surveys with 10 participants via Google Forms</p>
           </div>
-          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-connector"></div>
           <div class="process-step">
-            <div class="process-icon"><i class="fas fa-crosshairs"></i></div>
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="fas fa-crosshairs"></i></div>
             <h4>Define</h4>
-            <p>Pain points identified & problem framed</p>
+            <p>Synthesized pain points and defined core user problems</p>
           </div>
-          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-connector"></div>
           <div class="process-step">
-            <div class="process-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
             <h4>Ideate</h4>
-            <p>Feature brainstorming & concept sketches</p>
+            <p>Sketched flows, features, and interface concepts</p>
           </div>
-          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-connector"></div>
           <div class="process-step">
-            <div class="process-icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="step-num">04</div>
+            <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
             <h4>Prototype</h4>
-            <p>High-fidelity screens in Figma & XD</p>
+            <p>High-fidelity Figma screens with full user flows</p>
           </div>
-          <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+          <div class="process-connector"></div>
           <div class="process-step">
-            <div class="process-icon"><i class="fas fa-flask"></i></div>
+            <div class="step-num">05</div>
+            <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
             <h4>Testing</h4>
-            <p>Usability tests with target users</p>
+            <p>Usability testing and iterative refinement</p>
           </div>
         </div>
       </div>
 
-      <!-- User Personas -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">User Personas</h3>
+      <!-- Target Users + Research -->
+      <div class="cs-two-col reveal-up">
+        <div class="cs-info-card">
+          <h3>Target Users</h3>
+          <ul class="cs-list">
+            <li><i class="fas fa-running"></i> Players and sports enthusiasts</li>
+            <li><i class="fas fa-building"></i> Turf owners and managers</li>
+            <li><i class="fas fa-calendar-alt"></i> Event organizers and coaches</li>
+          </ul>
+        </div>
+        <div class="cs-info-card">
+          <h3>Key Research Findings</h3>
+          <ul class="cs-list">
+            <li><i class="fas fa-clock"></i> Users want real-time slot availability</li>
+            <li><i class="fas fa-mouse-pointer"></i> Simple, fast booking flow needed</li>
+            <li><i class="fas fa-credit-card"></i> Online payment a priority</li>
+            <li><i class="fas fa-bell"></i> Reminders, reviews & loyalty rewards</li>
+            <li><i class="fas fa-search"></i> Better turf discovery for sports</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Personas -->
+      <div class="cs-personas reveal-up">
+        <h3 class="cs-section-heading">User Personas</h3>
         <div class="personas-grid">
-          <div class="persona-card glass-card">
-            <div class="persona-avatar"><i class="fas fa-user-circle"></i></div>
+          <div class="persona-card">
+            <div class="persona-avatar persona-1">S</div>
             <div class="persona-info">
               <h4>Santhosh</h4>
-              <p class="persona-role"><i class="fas fa-cricket-bat-ball"></i> Cricket Player, Madurai</p>
-              <p class="persona-bio">Plays cricket 3x a week. Frustrated by calling venues to check availability and dealing with double-booking issues.</p>
+              <p class="persona-role">Cricket Player, Madurai</p>
+              <p>Wants easy slot discovery and quick bookings for weekend cricket matches with friends.</p>
               <div class="persona-goals">
-                <span>Quick Booking</span><span>Real-time Slots</span><span>Team Scheduling</span>
+                <span>Fast Booking</span><span>Cricket Turfs</span><span>Group Play</span>
               </div>
             </div>
           </div>
-          <div class="persona-card glass-card">
-            <div class="persona-avatar"><i class="fas fa-user-circle"></i></div>
+          <div class="persona-card">
+            <div class="persona-avatar persona-2">Y</div>
             <div class="persona-info">
               <h4>Yogeshwari</h4>
-              <p class="persona-role"><i class="fas fa-shuttlecock"></i> Shuttle Player, Chennai</p>
-              <p class="persona-bio">Plays badminton on weekends. Wants to find nearby courts, compare prices, and pay digitally without hassle.</p>
+              <p class="persona-role">Shuttle Player, Chennai</p>
+              <p>Needs consistent weekly shuttle court availability with advance scheduling and reminders.</p>
               <div class="persona-goals">
-                <span>Easy Discovery</span><span>Online Payments</span><span>Loyalty Rewards</span>
+                <span>Weekly Schedule</span><span>Reminders</span><span>Loyalty Rewards</span>
               </div>
             </div>
           </div>
@@ -494,175 +552,285 @@
       </div>
 
       <!-- Pain Points -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">Pain Points</h3>
-        <div class="painpoints-grid">
-          <div class="pain-item glass-card"><i class="fas fa-exclamation-triangle"></i><p>Confusing booking flows</p></div>
-          <div class="pain-item glass-card"><i class="fas fa-clock"></i><p>No real-time slot updates</p></div>
-          <div class="pain-item glass-card"><i class="fas fa-list-ol"></i><p>Too many booking steps</p></div>
-          <div class="pain-item glass-card"><i class="fas fa-gift"></i><p>Poor loyalty systems</p></div>
-          <div class="pain-item glass-card"><i class="fas fa-futbol"></i><p>Limited sport-specific options</p></div>
+      <div class="cs-pain-points reveal-up">
+        <h3 class="cs-section-heading">Pain Points</h3>
+        <div class="pain-grid">
+          <div class="pain-item"><i class="fas fa-times-circle"></i><span>Confusing booking flows</span></div>
+          <div class="pain-item"><i class="fas fa-times-circle"></i><span>No real-time slot updates</span></div>
+          <div class="pain-item"><i class="fas fa-times-circle"></i><span>Too many booking steps</span></div>
+          <div class="pain-item"><i class="fas fa-times-circle"></i><span>Poor loyalty systems</span></div>
+          <div class="pain-item"><i class="fas fa-times-circle"></i><span>Limited sport-specific options</span></div>
+        </div>
+      </div>
+
+      <!-- User Journey -->
+      <div class="cs-journey reveal-up">
+        <h3 class="cs-section-heading">User Journey</h3>
+        <div class="journey-flow">
+          <div class="journey-stage"><i class="fas fa-search"></i><span>Discover</span></div>
+          <div class="journey-arrow"><i class="fa fa-arrow-right"></i></div>
+          <div class="journey-stage"><i class="fas fa-balance-scale"></i><span>Compare</span></div>
+          <div class="journey-arrow"><i class="fa fa-arrow-right"></i></div>
+          <div class="journey-stage"><i class="fas fa-calendar-check"></i><span>Book</span></div>
+          <div class="journey-arrow"><i class="fa fa-arrow-right"></i></div>
+          <div class="journey-stage"><i class="fas fa-futbol"></i><span>Play Day</span></div>
+          <div class="journey-arrow"><i class="fa fa-arrow-right"></i></div>
+          <div class="journey-stage"><i class="fas fa-star"></i><span>After Play</span></div>
         </div>
       </div>
 
       <!-- User Flow -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">User Flow</h3>
-        <div class="user-flow">
-          <div class="flow-step"><span>Login</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step"><span>Home</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step"><span>Explore</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step"><span>Select Turf</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step"><span>Select Sport</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step"><span>Select Slot</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step gold-step"><span>Payment</span></div>
-          <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-          <div class="flow-step success-step"><span>Confirmed!</span></div>
+      <div class="cs-userflow reveal-up">
+        <h3 class="cs-section-heading">User Flow</h3>
+        <div class="userflow">
+          <div class="flow-node flow-start">Login</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Home</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Explore</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Select Turf</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Select Sport</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Time Slot</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Add Details</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">Payment</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node flow-end">Confirmation</div>
         </div>
       </div>
 
       <!-- Features -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">Key Features</h3>
+      <div class="cs-features reveal-up">
+        <h3 class="cs-section-heading">Key Features</h3>
         <div class="features-grid">
-          <div class="feature-item glass-card"><i class="fas fa-calendar-check"></i><h4>Real-time Availability</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-credit-card"></i><h4>Online Payments</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-star"></i><h4>Ratings & Reviews</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-bell"></i><h4>Notifications</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-tachometer-alt"></i><h4>Owner Dashboard</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-users"></i><h4>Team Booking</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-search"></i><h4>Smart Filters</h4></div>
-          <div class="feature-item glass-card"><i class="fas fa-award"></i><h4>Loyalty Rewards</h4></div>
+          <div class="feature-item"><i class="fas fa-calendar-alt"></i><span>Real-time Availability</span></div>
+          <div class="feature-item"><i class="fas fa-credit-card"></i><span>Online Payments</span></div>
+          <div class="feature-item"><i class="fas fa-star"></i><span>Ratings & Reviews</span></div>
+          <div class="feature-item"><i class="fas fa-bell"></i><span>Notifications</span></div>
+          <div class="feature-item"><i class="fas fa-tachometer-alt"></i><span>Owner Dashboard</span></div>
+          <div class="feature-item"><i class="fas fa-users"></i><span>Team Booking</span></div>
+          <div class="feature-item"><i class="fas fa-filter"></i><span>Smart Filters</span></div>
+          <div class="feature-item"><i class="fas fa-gift"></i><span>Loyalty Rewards</span></div>
         </div>
       </div>
 
-      <!-- Screen Placeholders -->
-      <div class="reveal-up">
-        <h3 class="cs-subtitle-h3">App Screens</h3>
-        <div class="screens-grid">
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-sign-in-alt"></i></div>
-            <p>Login Screen</p>
+      <!-- Design System -->
+      <div class="cs-design-system reveal-up">
+        <h3 class="cs-section-heading">Design System</h3>
+        <div class="ds-grid">
+          <div class="ds-card">
+            <h4>Typography</h4>
+            <div class="ds-type">
+              <span class="ds-font-display">Montserrat</span>
+              <span class="ds-font-body">Clean, modern, readable</span>
+            </div>
           </div>
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-home"></i></div>
-            <p>Home Screen</p>
+          <div class="ds-card">
+            <h4>Color Palette</h4>
+            <div class="ds-colors">
+              <div class="ds-swatch" style="background:#1B5E20"><span>Dark Green</span></div>
+              <div class="ds-swatch" style="background:#C8A951"><span>Gold</span></div>
+              <div class="ds-swatch" style="background:#F5F0E8"><span>Off-White</span></div>
+              <div class="ds-swatch" style="background:#2A2A2A"><span>Dark Grey</span></div>
+            </div>
           </div>
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-map-marked-alt"></i></div>
-            <p>Turf Details</p>
+          <div class="ds-card">
+            <h4>Design Principles</h4>
+            <ul>
+              <li>Rounded corners</li>
+              <li>Card-based layout</li>
+              <li>Premium mobile UI</li>
+              <li>High contrast text</li>
+            </ul>
           </div>
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-calendar-alt"></i></div>
-            <p>Slot Booking</p>
+        </div>
+      </div>
+
+      <!-- Screen Mockups -->
+      <div class="cs-screens reveal-up">
+        <h3 class="cs-section-heading">App Screens</h3>
+        <div class="screens-scroll">
+          <div class="screen-mockup">
+            <div class="screen-label">Login</div>
+            <div class="screen-frame">
+              <div class="screen-content login-screen">
+                <div class="sc-logo">TB</div>
+                <div class="sc-title">TurfBook</div>
+                <div class="sc-input"></div>
+                <div class="sc-input"></div>
+                <div class="sc-btn"></div>
+              </div>
+            </div>
           </div>
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-credit-card"></i></div>
-            <p>Payment Screen</p>
+          <div class="screen-mockup">
+            <div class="screen-label">Home</div>
+            <div class="screen-frame">
+              <div class="screen-content home-screen">
+                <div class="sc-banner"></div>
+                <div class="sc-row">
+                  <div class="sc-mini-card"></div>
+                  <div class="sc-mini-card"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="screen-card glass-card">
-            <div class="screen-ph"><i class="fas fa-user-cog"></i></div>
-            <p>Profile Screen</p>
+          <div class="screen-mockup">
+            <div class="screen-label">Turf Details</div>
+            <div class="screen-frame">
+              <div class="screen-content turf-screen">
+                <div class="sc-hero-img"></div>
+                <div class="sc-info-block"></div>
+                <div class="sc-row">
+                  <div class="sc-tag"></div>
+                  <div class="sc-tag"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-mockup">
+            <div class="screen-label">Slot Booking</div>
+            <div class="screen-frame">
+              <div class="screen-content slot-screen">
+                <div class="sc-calendar"></div>
+                <div class="sc-slots-row">
+                  <div class="sc-slot-a"></div>
+                  <div class="sc-slot-b"></div>
+                  <div class="sc-slot-a"></div>
+                </div>
+                <div class="sc-book-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-mockup">
+            <div class="screen-label">Payment</div>
+            <div class="screen-frame">
+              <div class="screen-content pay-screen">
+                <div class="sc-summary"></div>
+                <div class="sc-pay-method"></div>
+                <div class="sc-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-mockup">
+            <div class="screen-label">Profile</div>
+            <div class="screen-frame">
+              <div class="screen-content profile-screen">
+                <div class="sc-avatar-circle"></div>
+                <div class="sc-name-block"></div>
+                <div class="sc-stats-row">
+                  <div class="sc-stat-chip"></div>
+                  <div class="sc-stat-chip"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Outcome -->
-      <div class="cs-outcome glass-card reveal-up">
-        <div class="cs-outcome-icon"><i class="fas fa-trophy"></i></div>
-        <h3>Final Outcome</h3>
-        <p>The final product creates a smooth booking experience for both players and turf owners with a modern and easy-to-use interface. The design successfully addressed all core pain points — reducing booking friction, enabling real-time slot management, and delivering a delightful mobile experience aligned with user needs.</p>
+      <div class="cs-outcome reveal-up">
+        <div class="outcome-card">
+          <i class="fas fa-trophy"></i>
+          <h3>Final Outcome</h3>
+          <p>The Turf Booking App delivers a smooth, modern booking experience for both players and turf owners. Clean flows, real-time availability, and intuitive design make sports accessible for everyone — from casual players to event organizers.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== EDUCATION SECTION ===== -->
-  <section id="education">
+  <section class="education section" id="education">
     <div class="container">
-      <div class="section-label reveal-up">Academic Background</div>
-      <h2 class="section-title centered reveal-up">Education</h2>
-
+      <div class="section-label reveal-up">Education</div>
+      <h2 class="section-title centered reveal-up">Academic <em>Background</em></h2>
       <div class="edu-grid">
-        <div class="edu-card glass-card reveal-up">
+        <div class="edu-card reveal-up">
           <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="edu-content">
-            <div class="edu-badge">B.E.</div>
-            <h3>Mechanical Engineering</h3>
-            <p class="edu-college">KLN College of Engineering and Technology</p>
-            <div class="edu-grade"><i class="fas fa-star"></i> CGPA: <strong>9.6</strong></div>
-          </div>
+          <div class="edu-year">B.E.</div>
+          <h3>Mechanical Engineering</h3>
+          <p class="edu-school">KLN College of Engineering and Technology</p>
+          <div class="edu-score">CGPA: <strong>9.6</strong></div>
+          <div class="edu-badge gold">Distinction</div>
         </div>
-        <div class="edu-card glass-card reveal-up delay-1">
+        <div class="edu-card reveal-up">
           <div class="edu-icon"><i class="fas fa-tools"></i></div>
-          <div class="edu-content">
-            <div class="edu-badge">Diploma</div>
-            <h3>Automobile Engineering</h3>
-            <p class="edu-college">Thanapandiyan Polytechnic College</p>
-            <div class="edu-grade"><i class="fas fa-star"></i> Score: <strong>86%</strong></div>
-          </div>
+          <div class="edu-year">Diploma</div>
+          <h3>Automobile Engineering</h3>
+          <p class="edu-school">Thanapandiyan Polytechnic College</p>
+          <div class="edu-score">Score: <strong>86%</strong></div>
+          <div class="edu-badge gold">Distinction</div>
         </div>
-        <div class="edu-card glass-card reveal-up delay-2">
+        <div class="edu-card reveal-up">
           <div class="edu-icon"><i class="fas fa-school"></i></div>
-          <div class="edu-content">
-            <div class="edu-badge">SSLC</div>
-            <h3>Secondary Education</h3>
-            <p class="edu-college">PKN Matriculation Higher Secondary School</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certifications -->
-      <div class="section-label reveal-up" style="margin-top:5rem;">Certifications</div>
-      <div class="cert-grid">
-        <div class="cert-card glass-card reveal-up">
-          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-          <div>
-            <h3>UI/UX Design Course</h3>
-            <p>2025 – 2026</p>
-          </div>
-        </div>
-        <div class="cert-card glass-card reveal-up delay-1">
-          <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
-          <div>
-            <h3>Web Development Internship</h3>
-            <p>CodeBind Technologies, Coimbatore</p>
-          </div>
+          <div class="edu-year">SSLC</div>
+          <h3>Secondary School</h3>
+          <p class="edu-school">PKN Matriculation Higher Secondary School</p>
+          <div class="edu-score">Board Examinations</div>
+          <div class="edu-badge bronze">Completed</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== TESTIMONIALS SECTION ===== -->
-  <section id="testimonials">
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <section class="certifications section" id="certifications">
+    <div class="container">
+      <div class="section-label reveal-up">Certifications</div>
+      <h2 class="section-title centered reveal-up">Credentials & <em>Training</em></h2>
+      <div class="cert-grid">
+        <div class="cert-card reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <div class="cert-info">
+            <h3>UI/UX Design Course</h3>
+            <p class="cert-org">Professional Development</p>
+            <p class="cert-year">2025 – 2026</p>
+          </div>
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified</div>
+        </div>
+        <div class="cert-card reveal-up">
+          <div class="cert-glow"></div>
+          <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="cert-info">
+            <h3>Web Development Internship</h3>
+            <p class="cert-org">CodeBind Technologies, Coimbatore</p>
+            <p class="cert-year">Completed</p>
+          </div>
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS PLACEHOLDER ===== -->
+  <section class="testimonials section" id="testimonials">
     <div class="container">
       <div class="section-label reveal-up">Testimonials</div>
-      <h2 class="section-title centered reveal-up">What People Say</h2>
+      <h2 class="section-title centered reveal-up">What Others <em>Say</em></h2>
       <div class="testimonials-grid">
-        <div class="testi-card glass-card reveal-up">
+        <div class="testi-card reveal-up">
           <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-          <p>"Exceptional design sensibility. Sarantheep's work is both functional and visually stunning."</p>
+          <p>"Sarantheep's design work is incredibly thoughtful. The attention to detail and user empathy in every project is remarkable."</p>
           <div class="testi-author">
-            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div class="testi-avatar">A</div>
             <div>
-              <h4>Team Lead</h4>
-              <p>Lumina Datamatics</p>
+              <strong>Arun — Project Manager</strong>
+              <span>Lumina Datamatics</span>
             </div>
           </div>
         </div>
-        <div class="testi-card glass-card reveal-up delay-1">
+        <div class="testi-card reveal-up">
           <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-          <p>"Creative and user-focused approach. Delivered outstanding design solutions on time."</p>
+          <p>"A natural designer with great taste and clean execution. Delivers consistently polished work on every brief."</p>
           <div class="testi-author">
-            <div class="testi-avatar"><i class="fas fa-user"></i></div>
+            <div class="testi-avatar">K</div>
             <div>
-              <h4>Client</h4>
-              <p>Threeframe Studio</p>
+              <strong>Yogi — Creative Director</strong>
+              <span>Threeframe Studio</span>
             </div>
           </div>
         </div>
@@ -671,113 +839,95 @@
   </section>
 
   <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact">
+  <section class="contact section" id="contact">
     <div class="container">
-      <div class="section-label reveal-up">Get In Touch</div>
-      <h2 class="section-title centered reveal-up">Let's Work Together</h2>
-      <p class="section-sub reveal-up">I'm currently available for freelance projects and full-time roles</p>
-
-      <div class="contact-grid">
-        <div class="contact-left reveal-left">
-          <div class="contact-info-card glass-card">
-            <h3>Contact Information</h3>
-            <div class="contact-items">
-              <a href="mailto:sarantheep143@gmail.com" class="contact-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div>
-                  <span class="contact-label">Email</span>
-                  <span class="contact-val">sarantheep143@gmail.com</span>
-                </div>
-              </a>
-              <a href="tel:+919171681783" class="contact-item">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div>
-                  <span class="contact-label">Phone</span>
-                  <span class="contact-val">+91 9171681783</span>
-                </div>
-              </a>
-              <a href="https://linkedin.com/in/s-sarantheep-sachena-b86967266" target="_blank" class="contact-item">
-                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                <div>
-                  <span class="contact-label">LinkedIn</span>
-                  <span class="contact-val">s-sarantheep-sachena</span>
-                </div>
-              </a>
+      <div class="section-label reveal-up">Contact</div>
+      <h2 class="section-title centered reveal-up">Let's <em>Connect</em></h2>
+      <p class="section-subtitle reveal-up">Open to full-time roles, freelance projects, and collaborations</p>
+      <div class="contact-wrap">
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:sarantheep143@gmail.com">sarantheep143@gmail.com</a>
             </div>
-            <div class="social-links">
-              <a href="https://linkedin.com/in/s-sarantheep-sachena-b86967266" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-btn"><i class="fab fa-behance"></i></a>
-              <a href="#" class="social-btn"><i class="fab fa-dribbble"></i></a>
-              <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
-            </div>
-            <a href="#" class="btn btn-primary magnetic full-width" download>
-              <span>Download Resume</span>
-              <i class="fas fa-download"></i>
-            </a>
           </div>
-        </div>
-        <div class="contact-right reveal-right">
-          <div class="contact-form glass-card">
-            <h3>Send a Message</h3>
-            <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" placeholder="John Doe" class="form-input" />
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-phone"></i></div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+919171681783">+91 91716 81783</a>
             </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="john@email.com" class="form-input" />
-            </div>
-            <div class="form-group">
-              <label>Subject</label>
-              <input type="text" placeholder="Project Collaboration" class="form-input" />
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea rows="5" placeholder="Tell me about your project..." class="form-input form-textarea"></textarea>
-            </div>
-            <button class="btn btn-primary magnetic full-width" onclick="submitForm(this)">
-              <span>Send Message</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
           </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://linkedin.com/in/s-sarantheep-sachena-b86967266" target="_blank">s-sarantheep-sachena</a>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="mailto:sarantheep143@gmail.com" class="social-btn" aria-label="Email"><i class="fa fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/s-sarantheep-sachena-b86967266" class="social-btn" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.behance.net/sachenasachena" class="social-btn" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            
+          </div>
+          <a href="./assests/Sarantheep Sachena.pdf" class="btn btn-primary magnetic" download>
+            <i class="fa fa-download"></i> Download Resume
+          </a>
         </div>
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic full-width">
+            <span>Send Message</span>
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer id="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo">S<span>.</span>S</div>
-          <p>Designing with purpose.<br>Building with passion.</p>
+          <span class="footer-logo">SS</span>
+          <p>Sarantheep Sachena<br/><em>UI/UX Designer</em></p>
         </div>
-        <div class="footer-links-col">
-          <h4>Navigation</h4>
+        <div class="footer-links">
           <a href="#about">About</a>
-          <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-links-col">
-          <h4>Connect</h4>
-          <a href="mailto:sarantheep143@gmail.com">Email</a>
-          <a href="https://linkedin.com/in/s-sarantheep-sachena-b86967266" target="_blank">LinkedIn</a>
-          <a href="#">Dribbble</a>
-          <a href="#">Behance</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Sarantheep Sachena. Crafted with <i class="fas fa-heart" style="color:var(--gold)"></i></p>
-        <p class="footer-tagline">UI/UX Designer · Madurai, India</p>
+        <p>© 2025 Sarantheep Sachena. Designed with <i class="fas fa-heart"></i> and Figma.</p>
+        <a href="#hero" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
       </div>
     </div>
   </footer>
 
   <!-- Floating Contact Button -->
-  <a href="#contact" class="floating-contact" title="Get in touch">
-    <i class="fas fa-comment-dots"></i>
+  <a href="#contact" class="floating-contact" aria-label="Contact">
+    <i class="fa fa-comment-dots"></i>
   </a>
 
   <script src="script.js"></script>
